@@ -61,11 +61,12 @@ Just clone and run.
 ./setup.sh
 source venv/bin/activate
 python3 app.py
-
+---
 ## Usage:
 Visit http://127.0.0.1:5000 and submit a payload by using my OOB XSS payload creator and listener (completely free so I'd really appreciate a sub on yt for this one):
 OOB XSS listener and payload generator: https://aged-cloud-b431.0days.workers.dev/
 My YouTube: https://youtube.com/@0dayscyber
+---
 🏴 Blind XSS Challenge — Steal the Admin Flag
 
 Your mission is to exploit a blind stored XSS vulnerability in this lab and use it to steal a secret flag that only the admin bot can access.
