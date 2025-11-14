@@ -7,7 +7,7 @@ app = Flask(__name__)
 STORED_PAYLOADS = []
 
 # MAIN FLAG (Only visible to admin)
-MAIN_FLAG = "THM{blind_xss_master_flag}"
+MAIN_FLAG = "THM{blind_xss_master}"
 
 
 @app.route("/")
