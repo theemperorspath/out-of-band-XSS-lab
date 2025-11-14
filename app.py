@@ -13,7 +13,7 @@ MAIN_FLAG = "THM{blind_xss_master}"
 @app.route("/")
 def index():
     resp = make_response("""
-        <h1>Blind XSS Lab</h1>
+        <h1>Blind XSS Lab by 0days</h1>
         <p>Submit a raw XSS payload. The admin bot will execute it with real cookies.</p>
 
         <form method="POST" action="/submit">
